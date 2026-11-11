@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheque Forgery Check</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo" aria-hidden="true">₹</span> Cheque OCR &amp; Forgery-Risk Analysis</div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" class="tab active" data-tab="forgery" aria-selected="true">Forgery detection</button>
+    <button role="tab" class="tab" data-tab="ocr" aria-selected="false">Digit OCR</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ======================= Forgery detection ======================= -->
+  <section id="tab-forgery" class="tabpage">
+    <div class="card">
+      <h1>Analyse an Indian bank cheque</h1>
+      <p class="lede">Detects fields, verifies the signature against registered samples, and looks for altered amounts,
+        dates and payee names. Results are risk indicators with evidence, not proof of forgery.</p>
+      <div class="uploads">
+        <label class="drop main" id="drop-cheque" tabindex="0">
+          <input type="file" id="in-cheque" accept="image/*" hidden>
+          <span class="drop-title">Cheque image</span>
+          <span class="drop-hint">Drag &amp; drop or click · PNG, JPEG, TIFF · max {{ max_mb }} MB</span>
+          <img id="prev-cheque" class="preview" alt="" hidden>
+        </label>
+        <div class="side-drops">
+          <label class="drop" id="drop-refs" tabindex="0">
+            <input type="file" id="in-refs" accept="image/*" multiple hidden>
+            <span class="drop-title">Registered signatures <em>optional</em></span>
+            <span class="drop-hint">Genuine samples of the account holder (4 recommended)</span>
+            <div id="prev-refs" class="thumbs"></div>
+          </label>
+          <label class="drop" id="drop-original" tabindex="0">
+            <input type="file" id="in-original" accept="image/*" hidden>
+            <span class="drop-title">Trusted original <em>optional</em></span>
+            <span class="drop-hint">Image of the same cheque taken before it was handed over</span>
+            <img id="prev-original" class="preview small" alt="" hidden>
+          </label>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="btn-analyze" class="btn primary" disabled>Analyse cheque</button>
+        <button id="btn-clear" class="btn ghost">Clear</button>
+        <span id="status" class="status" role="status" aria-live="polite"></span>
+      </div>
+      <p class="privacy">Images are processed in memory and never written to disk. The result is kept in memory for
+        {{ retention_minutes }} minutes so the PDF can be downloaded, then deleted automatically; you can delete it sooner.</p>
+    </div>
+
+    <div id="results" hidden>
+      <div id="verdict" class="card verdict"></div>
+      <nav class="subtabs" role="tablist">
+        <button class="subtab active" data-panel="overview">Overview</button>
+        <button class="subtab" data-panel="fields">Fields</button>
+        <button class="subtab" data-panel="signature">Signature</button>
+        <button class="subtab" data-panel="tampering">Tampering</button>
+        <button class="subtab" data-panel="forensics">Forensics</button>
+        <button class="subtab" data-panel="checks">Checks &amp; processing</button>
+      </nav>
+      <div class="panel card" data-panel="overview"></div>
+      <div class="panel card" data-panel="fields" hidden></div>
+      <div class="panel card" data-panel="signature" hidden></div>
+      <div class="panel card" data-panel="tampering" hidden></div>
+      <div class="panel card" data-panel="forensics" hidden></div>
+      <div class="panel card" data-panel="checks" hidden></div>
+    </div>
+  </section>
+
+  <!-- ======================= Original digit OCR ======================= -->
+  <section id="tab-ocr" class="tabpage" hidden>
+    <div class="card">
+      <h1>Digit OCR</h1>
+      <p class="lede">The original pipeline: image quality checks, Tesseract OCR and the MNIST CNN digit classifier.</p>
+      <label class="drop main" id="drop-ocr" tabindex="0">
+        <input type="file" id="in-ocr" accept="image/*" hidden>
+        <span class="drop-title">Image</span>
+        <span class="drop-hint">Drag &amp; drop or click</span>
+        <img id="prev-ocr" class="preview" alt="" hidden>
+      </label>
+      <div class="actions">
+        <button id="btn-ocr" class="btn primary" disabled>Run OCR</button>
+        <span id="status-ocr" class="status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <div id="ocr-results" class="card" hidden></div>
+  </section>
+</main>
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

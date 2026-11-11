@@ -1,0 +1,68 @@
+{
+  "n": 120,
+  "split": "test (unseen templates, fonts, signers)",
+  "boundary_detection": {
+    "classical": {
+      "success_rate(corner error <= 2% of width)": 0.7916666666666666,
+      "median_corner_error_px": 5.0175628662109375
+    },
+    "classical+unet": {
+      "success_rate(corner error <= 2% of width)": 0.8583333333333333,
+      "median_corner_error_px": 5.185798645019531
+    }
+  },
+  "field_iou": {
+    "segmentation+structure": {
+      "mean_iou": {
+        "payee": 0.849931656773514,
+        "date": 0.8134516196142828,
+        "amount_numeric": 0.9202089067202889,
+        "amount_words": 0.9470900015782128,
+        "cheque_number": 0.7802324831030217,
+        "account_number": 0.7262157298281534,
+        "ifsc": 0.7269835854888999,
+        "signature": 0.818903908920889,
+        "micr": 0.6310499876294937
+      },
+      "localization_accuracy(iou>=0.5)": {
+        "payee": 1.0,
+        "date": 1.0,
+        "amount_numeric": 1.0,
+        "amount_words": 1.0,
+        "cheque_number": 1.0,
+        "account_number": 1.0,
+        "ifsc": 1.0,
+        "signature": 1.0,
+        "micr": 1.0
+      },
+      "overall_mean_iou": 0.8015630977396396
+    },
+    "prior+structure": {
+      "mean_iou": {
+        "payee": 0.400161734673621,
+        "date": 0.452702349425259,
+        "amount_numeric": 0.9202089067202889,
+        "amount_words": 0.431514076945679,
+        "cheque_number": 0.16173440756774085,
+        "account_number": 0.10711461863147256,
+        "ifsc": 0.1766422558922559,
+        "signature": 0.6372563352826511,
+        "micr": 0.26405378186628187
+      },
+      "localization_accuracy(iou>=0.5)": {
+        "payee": 0.0,
+        "date": 0.08333333333333333,
+        "amount_numeric": 1.0,
+        "amount_words": 0.65,
+        "cheque_number": 0.0,
+        "account_number": 0.0,
+        "ifsc": 0.0,
+        "signature": 1.0,
+        "micr": 0.0
+      },
+      "overall_mean_iou": 0.3945987185561389
+    }
+  },
+  "orientation_accuracy_upright_vs_180": 1.0,
+  "generated_at": "2026-11-10 19:34:11"
+}

@@ -1,0 +1,162 @@
+{
+  "split": "test: templates, handwriting fonts and CEDAR signers unseen in training/calibration",
+  "risk_calibration": {
+    "t_low": 27.71,
+    "t_high": 75.45,
+    "val_auc": 0.7293913043478261,
+    "univariate_auc": {
+      "amount_mismatch": 0.5491826086956522,
+      "signature_forgery_prob": 0.6258086956521739,
+      "amount_figures_alteration": 0.5252521739130435,
+      "amount_words_alteration": 0.5358260869565217,
+      "date_alteration": 0.5215652173913043,
+      "payee_alteration": 0.5081391304347826,
+      "date_invalid": 0.49617391304347824,
+      "image_forensics": 0.5197217391304347,
+      "duplicated_glyph": 0.5130434782608696,
+      "original_difference": 0.568,
+      "unreadable_fields": 0.525391304347826,
+      "low_ocr_confidence": 0.5288347826086957,
+      "image_quality": 0.5041739130434783
+    },
+    "n_val": 240
+  },
+  "learned_weights": {
+    "amount_mismatch": 0.314,
+    "signature_forgery_prob": 0.583,
+    "amount_figures_alteration": -0.012,
+    "amount_words_alteration": 0.194,
+    "date_alteration": -0.086,
+    "payee_alteration": 0.153,
+    "date_invalid": -0.268,
+    "image_forensics": 0.165,
+    "duplicated_glyph": 0.446,
+    "original_difference": 0.503,
+    "unreadable_fields": 0.456,
+    "low_ocr_confidence": -0.016,
+    "image_quality": 0.033
+  },
+  "document_map_thresholds": {
+    "ela": 0.6,
+    "noise": 0.8,
+    "jpeg_ghost": 0.8,
+    "jpeg_grid": 0.8,
+    "texture": 0.6,
+    "edges": 0.3,
+    "frequency": 0.4
+  },
+  "test": {
+    "n": 240,
+    "n_altered_or_forged": 117,
+    "risk_score_roc_auc": 0.7139879091098603,
+    "category_counts": {
+      "genuine": {
+        "LOW RISK": 9,
+        "REQUIRES REVIEW": 112,
+        "HIGH RISK": 2
+      },
+      "altered": {
+        "LOW RISK": 4,
+        "REQUIRES REVIEW": 91,
+        "HIGH RISK": 22
+      }
+    },
+    "high_risk_precision": 0.9166666666666666,
+    "high_risk_recall": 0.18803418803418803,
+    "altered_classified_low_rate": 0.03418803418803419,
+    "genuine_classified_low_rate": 0.07317073170731707,
+    "flagged_for_review_or_high_recall": 0.9658119658119658,
+    "detection_by_kind(not LOW)": {
+      "added_stroke": {
+        "rate": 0.9411764705882353,
+        "n": 17
+      },
+      "append_digit": {
+        "rate": 1.0,
+        "n": 9
+      },
+      "copied_glyph": {
+        "rate": 1.0,
+        "n": 3
+      },
+      "erased_rewritten": {
+        "rate": 1.0,
+        "n": 16
+      },
+      "erased_rewritten_words": {
+        "rate": 1.0,
+        "n": 5
+      },
+      "forged_signature": {
+        "rate": 1.0,
+        "n": 25
+      },
+      "overwritten_digit": {
+        "rate": 1.0,
+        "n": 26
+      },
+      "pasted_region": {
+        "rate": 1.0,
+        "n": 4
+      },
+      "payee_appended": {
+        "rate": 0.8,
+        "n": 5
+      },
+      "payee_erased_rewritten": {
+        "rate": 1.0,
+        "n": 6
+      },
+      "prefix_digit": {
+        "rate": 0.9047619047619048,
+        "n": 21
+      },
+      "squeezed_word_suffix": {
+        "rate": 0.8,
+        "n": 5
+      }
+    },
+    "amount_consistency_check": {
+      "n_inconsistent": 70,
+      "fail_rate_when_inconsistent": 0.3,
+      "flag_rate_when_inconsistent(FAIL or WARN)": 0.8857142857142857,
+      "false_fail_rate_when_consistent": 0.08235294117647059
+    },
+    "ocr_accuracy": {
+      "amount_figures_ok": 0.7541666666666667,
+      "amount_words_ok": 0.525,
+      "date_ok": 0.6291666666666667,
+      "ifsc_ok": 0.6791666666666667,
+      "cheque_number_ok": 0.20416666666666666
+    },
+    "signature_on_cheques": {
+      "n_genuine": 215,
+      "n_forged": 25,
+      "forged_flagged_mismatch": 0.48,
+      "forged_not_accepted(mismatch or inconclusive)": 1.0,
+      "genuine_accepted": 0.4046511627906977,
+      "genuine_flagged_mismatch": 0.05116279069767442
+    },
+    "trusted_original_comparison": {
+      "n": 80,
+      "recall_pixel_alterations": 0.9705882352941176,
+      "false_alarm_rate": 0.06521739130434782
+    },
+    "processing_seconds_per_cheque": {
+      "mean": 8.915054307499668,
+      "median": 8.85976505005965,
+      "p95": 10.913539684977149
+    },
+    "stage_seconds_median": {
+      "preprocessing": 0.6628674499806948,
+      "field_detection_and_ocr": 1.9901608999934979,
+      "signature_verification": 2.767267199989874,
+      "amount_alteration": 0.6527027499978431,
+      "date_payee_alteration": 0.8920137999230064,
+      "document_forensics": 1.7222523500095122,
+      "validation_and_risk": 0.006197249924298376,
+      "total": 8.844037200033199
+    }
+  },
+  "generated_at": "2026-11-11 22:43:48"
+}

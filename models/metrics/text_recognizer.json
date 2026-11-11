@@ -1,0 +1,119 @@
+{
+  "val": {
+    "cer": 0.16008997804297748,
+    "line_accuracy": 0.4593333333333333,
+    "n": 3000
+  },
+  "test": {
+    "cer": 0.08497730301057328,
+    "line_accuracy": 0.6156666666666667,
+    "n": 3000
+  },
+  "steps": 3500,
+  "n_train": 60000,
+  "data": "synthetic cheque text lines; handwriting font families and printed fonts disjoint across splits",
+  "caveat": "measured on synthetic renderings only; real handwriting accuracy is unmeasured",
+  "test_examples": [
+    {
+      "gold": "Sixteen Lakh Thirty Thousand Only",
+      "pred": "ESrten Lakh Nhert Thoosaned Only"
+    },
+    {
+      "gold": "ns--OJNUDP",
+      "pred": "na OMdpe"
+    },
+    {
+      "gold": "SEVEN LAKH EIGHTY ONE THOUSAND THREE HUNDRED SIXTY THREE ONLY",
+      "pred": "SEVEN LNRh ELGHTY ONE HUSAND TREE NUNDRED SATU TDREE ONLY"
+    },
+    {
+      "gold": "Chopra Agencies",
+      "pred": "Chopra Agencies"
+    },
+    {
+      "gold": "HUNDRED FIFTY ONE ONLY",
+      "pred": "HUNDRED FIFTY0NEONLY"
+    },
+    {
+      "gold": "21,909",
+      "pred": "21,909"
+    },
+    {
+      "gold": "296233 113283173 961791 39",
+      "pred": "296233 113283173 961791 39"
+    },
+    {
+      "gold": "Fifty Thousand Four Hundred Twenty Five Only",
+      "pred": "Fixy Thousand Four Hundred Twenty Five Only"
+    },
+    {
+      "gold": "eighty five thousand",
+      "pred": "eighty fire thousand"
+    },
+    {
+      "gold": "Seventy Six Thousand Only",
+      "pred": "Seventy Six Thousand Only"
+    },
+    {
+      "gold": "96642/-",
+      "pred": "96642/-"
+    },
+    {
+      "gold": "ZrQqRsgQlV",
+      "pred": "ZrQqRsqQlU"
+    },
+    {
+      "gold": "db,Cwfu.b",
+      "pred": "Ahcuhih"
+    },
+    {
+      "gold": "59,000",
+      "pred": "59,000"
+    },
+    {
+      "gold": "66000.00",
+      "pred": "66000.00"
+    },
+    {
+      "gold": "Asha Agarwal",
+      "pred": "Asha Agumal"
+    },
+    {
+      "gold": "three lakh forty one thousand three",
+      "pred": "three Lakh forty one thousand three"
+    },
+    {
+      "gold": "Y2An.VJ,",
+      "pred": "Y2b-UJ"
+    },
+    {
+      "gold": "THOUSAND ONLY",
+      "pred": "INOY NNOOONLY"
+    },
+    {
+      "gold": "vAQ.uv3j",
+      "pred": "vAQuv3j"
+    },
+    {
+      "gold": "Rahul Khan",
+      "pred": "Rahul Khan"
+    },
+    {
+      "gold": "Menon Motors",
+      "pred": "Menon Motors"
+    },
+    {
+      "gold": "Lakshmi Gupta",
+      "pred": "Lakshmi Gurpta"
+    },
+    {
+      "gold": "43,104/-",
+      "pred": "43,704/-"
+    },
+    {
+      "gold": "Nine Lakh Ninety Thousand Six Hundred Seventy Five Only",
+      "pred": "Nhitee ALakh Tiety Thousand Six Hundred Seendty Tiwee Only"
+    }
+  ],
+  "generated_at": "2026-11-10 16:41:37"
+}

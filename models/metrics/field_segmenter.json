@@ -1,0 +1,21 @@
+{
+  "val": {
+    "summary": 0.9197025084729086,
+    "pixel_iou": {
+      "payee": 0.9197682065971968,
+      "date": 0.9382407585367416,
+      "amount_numeric": 0.9510656252453097,
+      "amount_words": 0.9603459963577636,
+      "cheque_number": 0.9286482430911592,
+      "account_number": 0.9177823980990678,
+      "ifsc": 0.9041358125454465,
+      "signature": 0.8963976122269727,
+      "micr": 0.8609379235565194
+    }
+  },
+  "n_train": 1600,
+  "n_val": 240,
+  "epochs": 8,
+  "data": "synthetic, template-disjoint val split",
+  "generated_at": "2026-11-10 15:43:10"
+}

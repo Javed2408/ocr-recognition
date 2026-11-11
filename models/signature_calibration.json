@@ -1,0 +1,13 @@
+{
+  "eer": 0.4165553152561188,
+  "accept": 0.24648964405059814,
+  "reject": 0.6250565052032471,
+  "logistic": {
+    "coef": 5.766119755002567,
+    "intercept": -2.2418239918813194
+  },
+  "genuine_spread_p90": 0.5377836227416991,
+  "aggregation": "mean_distance",
+  "n_refs_calibrated": 4,
+  "target_rate": 0.05
+}

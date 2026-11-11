@@ -1,0 +1,12 @@
+opencv-python>=4.5
+numpy
+matplotlib
+tensorflow>=2.12  # MNIST digit CNN (aiproject.py)
+pytesseract  # also needs the Tesseract binary: https://github.com/UB-Mannheim/tesseract/wiki
+pytest  # for running the tests
+
+# cheque_forensics (forgery-risk analysis)
+torch>=2.0  # CPU wheel works; for an NVIDIA GPU install the CUDA wheel from https://pytorch.org
+pillow>=9.0
+scikit-learn>=1.2
+flask>=2.3

@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+*_annotated.png
+
+# downloaded datasets, generated training data and enrolled signatures (sensitive)
+data/
+# training logs (metrics JSON files in models/metrics are kept)
+models/metrics/*.log

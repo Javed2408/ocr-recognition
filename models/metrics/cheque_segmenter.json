@@ -1,0 +1,12 @@
+{
+  "val": {
+    "summary": 0.982083707792376,
+    "mask_iou_mean": 0.982083707792376,
+    "mask_iou_min": 0.797935385203594
+  },
+  "n_train": 800,
+  "n_val": 240,
+  "epochs": 8,
+  "data": "synthetic, template-disjoint val split",
+  "generated_at": "2026-11-10 14:46:27"
+}

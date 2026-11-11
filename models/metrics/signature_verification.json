@@ -1,0 +1,97 @@
+{
+  "dataset": "CEDAR (55 writers x 24 genuine + 24 skilled forgeries), writer-disjoint splits",
+  "splits": {
+    "train": [
+      1,
+      35
+    ],
+    "val": [
+      36,
+      45
+    ],
+    "test": [
+      46,
+      55
+    ]
+  },
+  "calibration": {
+    "eer": 0.4165553152561188,
+    "accept": 0.24648964405059814,
+    "reject": 0.6250565052032471,
+    "logistic": {
+      "coef": 5.766119755002567,
+      "intercept": -2.2418239918813194
+    },
+    "genuine_spread_p90": 0.5377836227416991,
+    "aggregation": "mean_distance",
+    "n_refs_calibrated": 4,
+    "target_rate": 0.05
+  },
+  "validation": {
+    "skilled": {
+      "roc_auc": 0.8821875,
+      "eer": 0.17041666666666666,
+      "far_at_val_threshold": 0.17083333333333334,
+      "frr_at_val_threshold": 0.17,
+      "precision_forgery": 0.8540772532188842,
+      "recall_forgery": 0.8291666666666667,
+      "three_way": {
+        "inconclusive_rate": 0.48409090909090907,
+        "far_decided": 0.08695652173913043,
+        "frr_decided": 0.12359550561797752
+      },
+      "n_genuine": 200,
+      "n_forged": 240
+    },
+    "random": {
+      "roc_auc": 0.9179000000000002,
+      "eer": 0.16,
+      "far_at_val_threshold": 0.14,
+      "frr_at_val_threshold": 0.17,
+      "precision_forgery": 0.7166666666666667,
+      "recall_forgery": 0.86,
+      "three_way": {
+        "inconclusive_rate": 0.48333333333333334,
+        "far_decided": 0.030303030303030304,
+        "frr_decided": 0.12359550561797752
+      },
+      "n_genuine": 200,
+      "n_forged": 100
+    }
+  },
+  "test": {
+    "skilled": {
+      "roc_auc": 0.8643333333333333,
+      "eer": 0.19541666666666668,
+      "far_at_val_threshold": 0.3,
+      "frr_at_val_threshold": 0.1,
+      "precision_forgery": 0.8936170212765957,
+      "recall_forgery": 0.7,
+      "three_way": {
+        "inconclusive_rate": 0.5431818181818182,
+        "far_decided": 0.18699186991869918,
+        "frr_decided": 0.05128205128205128
+      },
+      "n_genuine": 200,
+      "n_forged": 240
+    },
+    "random": {
+      "roc_auc": 0.9827,
+      "eer": 0.08,
+      "far_at_val_threshold": 0.06,
+      "frr_at_val_threshold": 0.1,
+      "precision_forgery": 0.8245614035087719,
+      "recall_forgery": 0.94,
+      "three_way": {
+        "inconclusive_rate": 0.44666666666666666,
+        "far_decided": 0.011363636363636364,
+        "frr_decided": 0.05128205128205128
+      },
+      "n_genuine": 200,
+      "n_forged": 100
+    }
+  },
+  "epochs": 25,
+  "protocol": "4 genuine references per writer; score = mean_distance to references",
+  "generated_at": "2026-11-10 17:01:07"
+}
